@@ -17,3 +17,7 @@
         @content;
     }
 }
+
+@function z-index($index-name){
+    @return map-get($z-index, $index-name);
+}

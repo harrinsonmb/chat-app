@@ -3,24 +3,6 @@
     background: transparent;
 }
 
-.nav-button__container{
-    bottom: 0;
-    height: $nav-button-height;
-    left: 0;
-    margin-bottom: 0.5rem;
-    position: fixed;
-    text-align: center;
-    @extend %container;
-    
-    .btn--add-as-friend{ 
-        background-color: color(eclipse);
-        height: $nav-button-height;
-        text-transform: uppercase;
-        width: 100%;
-        @extend %inverse;
-    }
-}
-
 .icon--star{
     color: white;
     font-size: font-size(small);
@@ -28,5 +10,14 @@
 
     .is-active &{
         color: color(mimosa);
+    }
+}
+
+.btn--nav-bar{
+    line-height: 0.1;
+
+    [class^="icon--"], [class*=" icon--"]{
+        font-size: font-size(big);
+        color: white;
     }
 }

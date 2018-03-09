@@ -11,3 +11,36 @@
     transform: translateX(-50%);
     left: 50%;
 }
+
+%arrow{
+    content: "";    
+    height: 0; 
+    position: absolute;
+    top: 0;
+    width: 0; 
+}
+
+.arrow--left:before, %arrow--left:before{
+    border-bottom: 1.5rem solid transparent;
+    border-right: 1rem solid white;
+    left: -0.5rem;
+    @extend %arrow;    
+}
+
+.arrow--right:after, %arrow--right:after{
+    border-bottom: 1.5rem solid transparent;
+    border-left: 1rem solid  color(bubble);
+    right: -0.5rem;
+    @extend %arrow;
+}
+
+
+.btn--link{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    
+    &:link, & > a{
+        line-height: 0.1;
+    }
+}

@@ -12,17 +12,18 @@
 @import './mixins/layout';
 
 /*---------------*/
-/*     Common    */
-/*---------------*/
-
-@import './modules/utils';
-
-/*---------------*/
 /*     Modules   */
 /*---------------*/
+@import './modules/utils';
 @import './modules/layout';
 @import './modules/header';
 @import './modules/views';
-@import './modules/biography';
 @import './modules/buttons';
 @import './modules/fonts';
+
+/*---------------*/
+/*     Views    */
+/*---------------*/
+
+@import './views/biography';
+@import './views/chat';

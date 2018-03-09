@@ -16,41 +16,77 @@
                     Sophie
                 </div>
                 <div class="nav-bar__buttons-container">
-                    <div class="btn nav-bar__btn">
-                        <a href="#view--chat">Back</a>
+                    <div class="btn--nav-bar">
+                        <a href="#view--chat" class="btn btn--link btn--icon">
+                            <span class="icon--back"></span>
+                        </a>
                     </div>
                 </div>
             </div>
         </header>
         <main>
             <div id="view--chat">
-                <div>chat</div>
+                <div class="chat__container">
+                    <ul class="chat__messages">
+                        <li class="chat__message is-friend-message">                                              
+                            <a href=#view--profile>
+                                <img class="message__picture" src="./img/sophie-profile.jpg" />
+                            </a>                                   
+                            <div class="message__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                        </li>
+                        <li class="chat__message">
+                            <img class="message__picture" src="./img/profile-1.jpg" />
+                            <div class="message__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                        </li>
+                        <li class="chat__message">                       
+                            <img class="message__picture" src="./img/profile-1.jpg" />
+                            <div class="message__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                        </li>
+                        <li class="chat__message is-friend-message">                       
+                            <a href=#view--profile>
+                                <img class="message__picture" src="./img/sophie-profile.jpg" />
+                            </a>                            
+                            <div class="message__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                        </li>
+                        <li class="chat__message">                       
+                            <img class="message__picture" src="./img/profile-1.jpg" />
+                            <div class="message__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit</div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-bottom__container">
+                    <div class="input__wrapper">
+                        <div class="arrow--left"></div>
+                        <input class="input__field" type="text" placeholder="Write a Message..." />
+                    </div>
+                </div>
             </div>
             <div id="view--profile">
-                <div class="row">
-                    <div class="profile-picture">
-                        <span class="friend-status">
+                <div class="profile-picture">
+                    <span class="friend-status">
 
-                        </span>
+                    </span>
+                    <a href="#view--chat">
                         <div class="img-wrapper">
                             <img src="./img/sophie.jpg" alt="Friend picture">
                         </div>
+                    </a>
+                </div>
+                <div class="biography">
+                    <div class="biography__title">
+                        <button class="btn btn--add-as-favorite"><span class="icon--star"></span></button>
+                        <span class="biography__name">Sophie</span><span class="biography__age">, 22</span>                                                        
                     </div>
-                    <div class="biography">
-                        <div class="biography__title">
-                            <button class="btn btn--add-as-favorite"><span class="icon--star"></span></button>
-                            <span class="biography__name">Sophie</span><span class="biography__age">, 22</span>                                                        
-                        </div>
-                        <div class="biography__location">
-                            New york
-                        </div>
-                        <div class="biography__description">
-                            Lorem ipsum dolor fit amet, consecteur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattic ac neque.
-                        </div>
+                    <div class="biography__location">
+                        New york
                     </div>
-                    <div class="nav-button__container">
-                        <button class="btn btn--add-as-friend">Add as friend</button>
+                    <div class="biography__description">
+                        Lorem ipsum dolor fit amet, consecteur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattic ac neque.
                     </div>
+                </div>
+                <div class="nav-bottom__container">
+                    <button class="btn btn--add-as-friend">Add as friend</button>
                 </div>
             </div>
         </main>        

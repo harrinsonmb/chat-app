@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-
+    z-index: z-index(navbar);
     @extend %inverse;
     
     &__container{
@@ -20,9 +20,5 @@
         font-size: font-size(big);
         font-weight: bold;
         @extend %center-with-translate;
-    }
-
-    &__buttons-container{
-        
     }
 }
