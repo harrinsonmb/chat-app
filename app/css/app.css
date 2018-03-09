@@ -1,0 +1,77 @@
+/*---------------*/
+/*   Variables   */
+/*---------------*/
+/*---------------*/
+/*     Mixins    */
+/*---------------*/
+/*---------------*/
+/*     Common    */
+/*---------------*/
+.inverse, .nav-bar {
+  background-color: #3c3c3c;
+  color: #edebec; }
+
+.center-with-mg {
+  margin: 0 auto; }
+
+.center-with-translate, .nav-bar__title {
+  transform: translateX(-50%);
+  left: 50%; }
+
+/*---------------*/
+/*     Modules   */
+/*---------------*/
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 16px; }
+
+body, html {
+  background-color: #edebec;
+  color: #3c3c3c;
+  font-size: 1.25rem;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%; }
+
+body {
+  padding-top: 3rem; }
+
+.container, main, .nav-bar__container {
+  margin: 0 auto;
+  max-width: 765px;
+  width: 100%;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem; }
+  @media screen and (min-width: 765px) {
+    .container, main, .nav-bar__container {
+      padding-left: 1rem;
+      padding-right: 1rem; } }
+
+.nav-bar {
+  height: 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%; }
+  .nav-bar__container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative; }
+  .nav-bar__title {
+    position: absolute;
+    font-family: Helvetica;
+    font-size: 1.5rem;
+    font-weight: bold; }
+
+[id^=view] {
+  display: none;
+  /* The last view is always visible if other views are not targets */ }
+  [id^=view]:last-child {
+    display: block; }
+  [id^=view]:target {
+    display: block; }
+  [id^=view]:target + [id^=view] {
+    display: none; }

@@ -1,0 +1,19 @@
+@function rem-calc($px){
+    @return $px / 16+rem;
+}
+
+@function font-size($font-name){    
+    @return rem-calc(map-get($font-size, $font-name));
+}
+
+@function font-family($font-name){    
+    @return map-get($font-family, $font-name);
+}
+
+@function pantone($color-name){
+    @return map-get($pantone, $color-name);
+}
+
+@function color($color-name){
+    @return pantone(map-get($map: $colors, $key: $color-name));
+}

@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+body, html{
+    background-color: color(bg-light);
+    color: color(body);
+    font-size: font-size(normal);
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+body{
+    padding-top: $nav-bar-height;    
+}
+
+.container, %container{
+    margin: 0 auto;
+    max-width: 765px;
+    width: 100%;
+    
+    padding-left: $container-padding-sm;
+    padding-right: $container-padding-sm;
+
+    @include media-from(md){
+        padding-left: $container-padding-lg;
+        padding-right: $container-padding-lg;
+    }    
+}
+
+main{
+    @extend %container;
+}

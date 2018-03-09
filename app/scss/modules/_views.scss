@@ -1,0 +1,16 @@
+[id^=view]{
+    display: none;
+
+    /* The last view is always visible if other views are not targets */
+    &:last-child{
+        display: block;
+    }
+
+    &:target {
+        display: block;
+    }
+
+    &:target + [id^=view]{
+        display: none;
+    }
+}

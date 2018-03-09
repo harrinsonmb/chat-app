@@ -1,0 +1,19 @@
+@mixin media-from($from){
+    $breakpoint: map-get($map: $breakpoints, $key: $from);
+    @media screen and (min-width: $breakpoint){
+        @content;
+    }
+}
+
+@mixin media-until($until){
+    $breakpoint: map-get($map: $breakpoints, $key: $until);
+    @media screen and (max-width: #{$breakpoint}-1px){
+        @content;
+    }
+}
+
+@mixin media-between($from, $until){
+    @media screen and (min-width: $from) and (max-width: #{$breakpoint}-1px){
+        @content;
+    }
+}

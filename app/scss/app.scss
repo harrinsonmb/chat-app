@@ -1,21 +1,26 @@
 /*---------------*/
 /*   Variables   */
 /*---------------*/
-@import './variables/breakpoints';
 @import './variables/colors';
 @import './variables/fonts';
 @import './variables/layout';
+@import './variables/typography';
 
 /*---------------*/
 /*     Mixins    */
 /*---------------*/
-
+@import './mixins/utils';
+@import './mixins/layout';
 
 /*---------------*/
 /*     Common    */
 /*---------------*/
 
+@import './modules/utils.scss';
+
 /*---------------*/
 /*     Modules   */
 /*---------------*/
 @import './modules/layout.scss';
+@import './modules/header.scss';
+@import './modules/views.scss';

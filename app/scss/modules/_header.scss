@@ -1,0 +1,28 @@
+.nav-bar{    
+    height: $nav-bar-height;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    @extend %inverse;
+    
+    &__container{
+        align-items: center;
+        display: flex;
+        height: 100%;
+        position: relative;
+        @extend %container;
+    }
+    
+    &__title{
+        position: absolute;
+        font-family: font-family(alternate);
+        font-size: font-size(big);
+        font-weight: bold;
+        @extend %center-with-translate;
+    }
+
+    &__buttons-container{
+        
+    }
+}

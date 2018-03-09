@@ -11,4 +11,4 @@
 
 ## Development
 
-- npm start or gulp
+- `npm start` or `gulp`
