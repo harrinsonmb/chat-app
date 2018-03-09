@@ -17,7 +17,8 @@ body, html{
 }
 
 body{
-    padding-top: $nav-bar-height;    
+    padding-top: $nav-bar-height;
+    padding-bottom: $nav-button-height;
 }
 
 .container, %container{

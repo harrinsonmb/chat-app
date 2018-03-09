@@ -1,0 +1,32 @@
+.btn{
+    border: 0;
+    background: transparent;
+}
+
+.nav-button__container{
+    bottom: 0;
+    height: $nav-button-height;
+    left: 0;
+    margin-bottom: 0.5rem;
+    position: fixed;
+    text-align: center;
+    @extend %container;
+    
+    .btn--add-as-friend{ 
+        background-color: color(eclipse);
+        height: $nav-button-height;
+        text-transform: uppercase;
+        width: 100%;
+        @extend %inverse;
+    }
+}
+
+.icon--star{
+    color: white;
+    font-size: font-size(small);
+    text-shadow: 2px 2px 3px color(shadow), -2px -2px 3px color(shadow);
+
+    .is-active &{
+        color: color(mimosa);
+    }
+}

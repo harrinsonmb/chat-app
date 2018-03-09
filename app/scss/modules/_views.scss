@@ -15,8 +15,10 @@
     }
 }
 
-$profile-picture-max-size: 300px;
+$profile-picture-max-size: 200px;
 .img-wrapper{
+    margin-bottom: 1rem;
+    margin-top: 2rem;
     @extend %center-with-mg;
     .profile-picture &{
         max-width: $profile-picture-max-size;
@@ -28,3 +30,4 @@ $profile-picture-max-size: 300px;
         }
     }
 }
+

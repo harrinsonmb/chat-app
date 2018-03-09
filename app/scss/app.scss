@@ -2,7 +2,6 @@
 /*   Variables   */
 /*---------------*/
 @import './variables/colors';
-@import './variables/fonts';
 @import './variables/layout';
 @import './variables/typography';
 
@@ -16,11 +15,14 @@
 /*     Common    */
 /*---------------*/
 
-@import './modules/utils.scss';
+@import './modules/utils';
 
 /*---------------*/
 /*     Modules   */
 /*---------------*/
-@import './modules/layout.scss';
-@import './modules/header.scss';
-@import './modules/views.scss';
+@import './modules/layout';
+@import './modules/header';
+@import './modules/views';
+@import './modules/biography';
+@import './modules/buttons';
+@import './modules/fonts';

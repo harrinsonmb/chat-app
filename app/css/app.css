@@ -7,7 +7,7 @@
 /*---------------*/
 /*     Common    */
 /*---------------*/
-.inverse, .nav-bar {
+.inverse, .nav-bar, .nav-button__container .btn--add-as-friend {
   background-color: #3c3c3c;
   color: #edebec; }
 
@@ -37,16 +37,17 @@ body, html {
   width: 100%; }
 
 body {
-  padding-top: 3rem; }
+  padding-top: 3rem;
+  padding-bottom: 2rem; }
 
-.container, main, .nav-bar__container {
+.container, main, .nav-bar__container, .nav-button__container {
   margin: 0 auto;
   max-width: 765px;
   width: 100%;
   padding-left: 0.5rem;
   padding-right: 0.5rem; }
   @media screen and (min-width: 765px) {
-    .container, main, .nav-bar__container {
+    .container, main, .nav-bar__container, .nav-button__container {
       padding-left: 1rem;
       padding-right: 1rem; } }
 
@@ -62,7 +63,7 @@ body {
     position: relative; }
   .nav-bar__title {
     position: absolute;
-    font-family: Helvetica;
+    font-family: "Helvetica";
     font-size: 1.5rem;
     font-weight: bold; }
 
@@ -76,10 +77,74 @@ body {
   [id^=view]:target + [id^=view] {
     display: none; }
 
-.profile-picture .img-wrapper {
-  max-width: 300px;
-  max-height: 300px;
-  border-radius: 300px;
-  overflow: hidden; }
-  .profile-picture .img-wrapper img {
-    max-width: 300px; }
+.img-wrapper {
+  margin-bottom: 1rem;
+  margin-top: 2rem; }
+  .profile-picture .img-wrapper {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 200px;
+    overflow: hidden; }
+    .profile-picture .img-wrapper img {
+      max-width: 200px; }
+
+.biography .btn--add-as-favorite {
+  position: absolute;
+  right: 0; }
+
+.biography__title {
+  font-family: "Helvetica";
+  font-size: 1rem;
+  position: relative; }
+
+.biography__location {
+  color: #F86F9D;
+  font-size: 0.75rem;
+  font-weight: bold; }
+
+.biography__description {
+  padding-top: 0.5rem;
+  font-size: 0.75rem; }
+
+.btn {
+  border: 0;
+  background: transparent; }
+
+.nav-button__container {
+  bottom: 0;
+  height: 2rem;
+  left: 0;
+  margin-bottom: 0.5rem;
+  position: fixed;
+  text-align: center; }
+  .nav-button__container .btn--add-as-friend {
+    height: 2rem;
+    text-transform: uppercase;
+    width: 100%; }
+
+.icon--star {
+  color: white;
+  font-size: 1rem;
+  text-shadow: 2px 2px 3px #e3e1e1, -2px -2px 3px #e3e1e1; }
+
+@font-face {
+  font-family: 'icons';
+  src: url("../fonts/icons.ttf?jki0u9") format("truetype"), url("../fonts/icons.woff?jki0u9") format("woff"), url("../fonts/icons.svg?jki0u9#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon--"], [class*=" icon--"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon--star:before {
+  content: "\e9d9"; }
