@@ -1,22 +1,43 @@
-var gulp        = require('gulp');
-var browserSync = require('browser-sync').create();
-var sass        = require('gulp-sass');
+/* globals require */
+
+const gulp        = require('gulp');
+const browserSync = require('browser-sync').create();
+const sass        = require('gulp-sass');
+const webpack     = require('gulp-webpack');
+const jshint      = require('gulp-jshint');
 
 gulp.task('serve', ['sass'], function() {
-
+    'use strict';
     browserSync.init({
-        server: "./app"
+        server: './app'
     });
 
-    gulp.watch("app/scss/**/*.scss", ['sass']);
-    gulp.watch("app/*.html").on('change', browserSync.reload);
+    gulp.watch('app/**/*.js').on('change', browserSync.reload);
+    gulp.watch('src/**/*.html').on('change', browserSync.reload);
+    gulp.watch('src/**/*.scss', ['sass']);
+    gulp.watch('src/**/*.js', ['lint','webpack']);
 });
+
+gulp.task('webpack', function() {
+    'use strict';
+    return gulp.src('src/main.js')
+    .pipe(webpack( require('./webpack.config.js') ))
+    .pipe(gulp.dest('app/'));
+  });
+
+gulp.task('lint', function() {
+    'use strict';
+    return gulp.src('./src/js/**/*.js')
+      .pipe(jshint())
+      .pipe(jshint.reporter());
+  });
 
 gulp.task('sass', function() {
-    return gulp.src("app/scss/**/*.scss")
+    'use strict';
+    return gulp.src('src/scss/**/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest('app/css'))
         .pipe(browserSync.stream());
 });
-
-gulp.task('default', ['serve']);
+  
+gulp.task('default', ['lint', 'webpack', 'serve']);

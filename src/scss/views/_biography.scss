@@ -1,0 +1,37 @@
+.biography{
+    &__title{
+        font-family: font-family(alternate);
+        font-size: font-size(small);
+        position: relative;
+    }
+    &__location{
+        color: color(accent);
+        font-size: font-size(extra-small);
+        font-weight: bold;
+    }
+
+    &__description{
+        padding-top: 0.5rem;
+        font-size: font-size(extra-small);
+    }
+
+    &__image{
+        max-width: $profile-picture-max-size;
+    }
+}
+
+.profile-picture{
+    &__wrapper{
+        max-width: $profile-picture-max-size;
+        max-height: $profile-picture-max-size;
+        position: relative;
+        @extend %center-with-mg;
+
+        .img-wrapper{
+            border-radius: $profile-picture-max-size;
+            max-width: $profile-picture-max-size;
+            max-height: $profile-picture-max-size;
+            overflow: hidden;
+        }
+    }
+}

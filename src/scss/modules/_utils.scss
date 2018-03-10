@@ -34,13 +34,22 @@
     @extend %arrow;
 }
 
+.user-status{
+  background-color: color(success);
+  position: absolute;
+  right: 0;
 
-.btn--link{
-    cursor: pointer;
-    display: inline-block;
-    text-decoration: none;
-    
-    &:link, & > a{
-        line-height: 0.1;
-    }
+  .profile-picture__wrapper &{
+    color: white;
+    border-radius: $user-status-big;
+    font-family: font-family(alternate);
+    font-size: font-size(ultra-small);
+    font-weight: bold;
+    height: $user-status-big;
+    line-height: $user-status-big;
+    text-align: center;
+    text-transform: uppercase;
+    top: 8%;
+    width: $user-status-big;
+  }
 }

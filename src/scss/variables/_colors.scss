@@ -3,7 +3,9 @@ $pantone: (
     lily-white: #edebec,
     malibu: #6ac2e5,
     eclipse: #3c3c3c,
+    tawny-port: #63393B,
     tickle-me-pink: #F86F9D,
+    cherub: #F6DCE4,
     mimosa: #F6BE00,
     green-flash: #71CC51
 );
@@ -13,7 +15,11 @@ $colors : (
     body-light: lily-white,
     bg: eclipse,
     bg-light: lily-white,
+    bg-alternate: cherub,
+    btn-alternate: tawny-port,
     accent: tickle-me-pink,
     shadow: wan-white,
-    bubble: malibu
+    bubble: malibu,
+    warning: mimosa,
+    success: green-flash
 );

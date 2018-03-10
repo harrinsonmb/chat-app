@@ -1,0 +1,45 @@
+.btn{
+    border: 0;
+    background: transparent;
+}
+
+.btn--link{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+
+    &:link, & > a{
+        line-height: 0.1;
+    }
+}
+
+.btn--icon:focus{
+    cursor: pointer;
+    outline: none;
+}
+
+.btn--add-as-favorite{
+    .icon--star{
+        color: white;
+        font-size: font-size(small);
+        text-shadow: 2px 2px 3px color(shadow), -2px -2px 3px color(shadow);
+
+        .is-favorite &{
+            color: color(warning);
+        }
+    }
+
+    .biography__wrapper &{
+        position: absolute;
+        right: 0;
+    }
+}
+
+.btn--nav-bar{
+    line-height: 0.1;
+
+    [class^="icon--"], [class*=" icon--"]{
+        font-size: font-size(big);
+        color: white;
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "browser": true,
+    "esversion": 6,
+    "camelcase": true,
+    "eqeqeq": true,
+    "latedef": true,
+    "maxlen": 100,
+    "quotmark": "single",
+    "strict": true,
+    "undef": true,
+    "eqnull": true,
+    "node": true
+  }
+  
