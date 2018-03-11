@@ -3,8 +3,12 @@ let MessageService = function () {
     let instance;
     let messages = [];
 
-    function addMessage(message) {
-        messages.push(message);
+    function getMessages(){
+        return messages;
+    }
+
+    function addMessages(newMessages) {
+        messages.push(...newMessages);
     }
 
     function Singleton() {
@@ -12,7 +16,8 @@ let MessageService = function () {
             return instance;
         }
         instance = this;
-        instance.addMessage = addMessage;
+        instance.addMessages = addMessages;
+        instance.getMessages = getMessages;
     }
 
     Singleton.getInstance = function () {

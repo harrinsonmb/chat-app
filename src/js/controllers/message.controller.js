@@ -1,3 +1,6 @@
+let Utils = require('../utils');
+let Message = require('../models/message.model');
+
 let UserService = require('../services/user.service');
 let MessageService = require('../services/message.service');
 
@@ -32,27 +35,22 @@ let MessageController = function () {
     }
 
     function addMessage(message){
-
+        MessageService.getInstance().addMessages([message]);
         renderMessage(message);
     }
 
     function init(){
-        let currentUser = UserService.getInstance().currentUser;
         let visitedUser = UserService.getInstance().visitedUser;
-        const messages = [
-            {
-                id: new Date().getTime(),
-                text: 'Texto Uno',
-                user: currentUser,
-                isIncoming: false
-            },
-            {
-                id: new Date().getTime(),
-                text: 'Texto Dos',
-                user: visitedUser,
-                isIncoming: true
-            }
-        ];
+
+        let mockedMessage = new Message({
+            id: Utils.guid(),
+            text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+            user: visitedUser,
+            isIncoming: true
+        });
+        MessageService.getInstance().addMessages([mockedMessage]);
+
+        let messages = MessageService.getInstance().getMessages();
 
         let messagesToRender = [];
         if(messages.length <= 20){
