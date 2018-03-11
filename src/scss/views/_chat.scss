@@ -6,7 +6,7 @@
         list-style: none;
         margin: 0;
         padding: 0;
-        position: absolute;
+        //position: absolute;
         width: 100%
     }
 
@@ -19,40 +19,6 @@
             padding-bottom:  $nav-bottom-height+1rem;
         }
     }    
-}
-
-.message{
-    &__text{
-        background-color: white;        
-        border-radius: 4px;
-        display: block;
-        font-size: font-size(extra-small);
-        font-family: font-family(alternate);
-        margin: 1rem 2.5rem;
-        padding: 1rem;
-        position: relative;
-
-        .is-incoming-message > &{
-            background-color: color(bubble);
-            color: white;
-            @extend %arrow--right;
-        }
-        
-        :not(.is-incoming-message) > &{
-            @extend %arrow--left;
-        }
-    }
-    &__picture{
-        display: block;
-        position: absolute;
-        height: 2.25rem;
-        width: 2.25rem;
-        border-radius: 2.25rem;
-
-        .is-incoming-message &{
-            right: 0;
-        }
-    }
 }
 
 .input{

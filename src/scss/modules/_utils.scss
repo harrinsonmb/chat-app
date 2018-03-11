@@ -53,3 +53,10 @@
     width: $user-status-big;
   }
 }
+
+.link--absolute, %link--absolute{
+  position: absolute;
+  z-index: z-index(default);
+  height: 100%;
+  width: 100%;
+}

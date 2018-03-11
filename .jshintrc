@@ -9,6 +9,7 @@
     "strict": true,
     "undef": true,
     "eqnull": true,
-    "node": true
+    "node": true,
+    "validthis": true
   }
   

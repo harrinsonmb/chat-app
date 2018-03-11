@@ -1,0 +1,47 @@
+.message{
+  position: relative;
+  &__text{
+    background-color: white;
+    border-radius: 4px;
+    display: block;
+    font-size: font-size(extra-small);
+    font-family: font-family(alternate);
+    margin: 1rem 2.5rem;
+    padding: 1rem;
+    position: relative;
+
+    .is-incoming-message > &{
+      background-color: color(bubble);
+      color: white;
+      @extend %arrow--right;
+    }
+
+    :not(.is-incoming-message) > &{
+      @extend %arrow--left;
+    }
+  }
+
+  .image-wrapper{
+    position: absolute;
+    height: $chat-profile-picture-max-size;
+    width: $chat-profile-picture-max-size;
+  }
+
+  &.is-incoming-message{
+    .image-wrapper{
+      right: 0;
+    }
+  }
+
+  &__picture{
+    display: block;
+    position: absolute;
+    height: $chat-profile-picture-max-size;
+    width: $chat-profile-picture-max-size;
+    border-radius: $chat-profile-picture-max-size;
+  }
+
+  &__link{
+    @extend %link--absolute;
+  }
+}

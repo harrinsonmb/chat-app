@@ -1,6 +1,7 @@
-let template = require('../views/profile.html');
+let ProfileTemplate = require('../views/profile.html');
+let UserService = require('../services/user.service');
 
-let ProfileController = function (currentUser, visitedUser) {
+let ProfileController = function () {
     'use strict';
     const   biographyName = '.biography__name',
             biographyAge = '.biography__age',
@@ -52,9 +53,12 @@ let ProfileController = function (currentUser, visitedUser) {
     }
 
     function init(){
+        let currentUser = UserService.getInstance().currentUser;
+        let visitedUser = UserService.getInstance().visitedUser;
+
         let mainEl = document.querySelector('main');
         mainEl.innerHTML = '';
-        mainEl.insertAdjacentHTML('afterbegin', template);
+        mainEl.insertAdjacentHTML('afterbegin', ProfileTemplate);
 
         let nameEl = document.querySelector(biographyName);
         nameEl.innerHTML = visitedUser.name;

@@ -20,7 +20,7 @@ module.exports = {
       }]
   },
   plugins: [
-    new UglifyJsPlugin(),
+    //new UglifyJsPlugin(),
     new CopyWebpackPlugin([
       {
         from: 'src/index.html',

@@ -1,4 +1,4 @@
-let ChatService = function () {
+let MessageService = function () {
     'use strict';
     let instance;
     let messages = [];
@@ -22,4 +22,4 @@ let ChatService = function () {
     return Singleton;
 };
 
-module.exports = new ChatService();
+module.exports = new MessageService();

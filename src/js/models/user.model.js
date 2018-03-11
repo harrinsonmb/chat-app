@@ -1,6 +1,6 @@
 const User = function (params) {
     'use strict';
-    this.id = new Date().getTime();
+    this.id = params.id || null;
     this.name = params.name || null;
     this.age = params.age || null;
     this.city = params.city || null;
