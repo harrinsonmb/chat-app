@@ -4,7 +4,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
-  entry: './src/js/main.js',
+  entry: ['babel-polyfill', './src/js/main.js'],
   output: {
     filename: 'js/bundle.js',
     path: path.resolve(__dirname, 'app')
