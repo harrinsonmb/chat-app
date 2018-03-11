@@ -13,7 +13,9 @@
 }
 
 @mixin media-between($from, $until){
-    @media screen and (min-width: $from) and (max-width: #{$breakpoint}-1px){
+    $breakpointFrom: map-get($map: $breakpoints, $key: $from);
+    $breakpointUntil: map-get($map: $breakpoints, $key: $until);
+    @media screen and (min-width: $breakpointFrom) and (max-width: #{$breakpointUntil}-1px){
         @content;
     }
 }

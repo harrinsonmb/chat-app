@@ -4,15 +4,15 @@
     }
     &__messages{
         list-style: none;
-        margin: 0px;
-        padding: 0px;
+        margin: 0;
+        padding: 0;
         position: absolute;
         width: 100%
     }
 
     &__message{        
         display: block;
-        padding-left: 0px;
+        padding-left: 0;
         position: relative;
         
         &:last-child{
@@ -32,13 +32,13 @@
         padding: 1rem;
         position: relative;
 
-        .is-friend-message > &{
+        .is-incoming-message > &{
             background-color: color(bubble);
             color: white;
             @extend %arrow--right;
         }
         
-        :not(.is-friend-message) > &{
+        :not(.is-incoming-message) > &{
             @extend %arrow--left;
         }
     }
@@ -49,7 +49,7 @@
         width: 2.25rem;
         border-radius: 2.25rem;
 
-        .is-friend-message &{
+        .is-incoming-message &{
             right: 0;
         }
     }

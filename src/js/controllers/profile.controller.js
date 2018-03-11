@@ -1,3 +1,5 @@
+let template = require('../views/profile.html');
+
 let ProfileController = function (currentUser, visitedUser) {
     'use strict';
     const   biographyName = '.biography__name',
@@ -50,6 +52,10 @@ let ProfileController = function (currentUser, visitedUser) {
     }
 
     function init(){
+        let mainEl = document.querySelector('main');
+        mainEl.innerHTML = '';
+        mainEl.insertAdjacentHTML('afterbegin', template);
+
         let nameEl = document.querySelector(biographyName);
         nameEl.innerHTML = visitedUser.name;
 
@@ -73,8 +79,8 @@ let ProfileController = function (currentUser, visitedUser) {
             imageEl.src = './img/'+visitedUser.profileImage;
         }
 
-        checkFriendship(visitedUser, currentUser);
-        checkPreference(visitedUser, currentUser);
+        checkFriendship(currentUser, visitedUser);
+        checkPreference(currentUser, visitedUser);
 
         let btnAddUserEl = document.querySelector(btnAddFriend);
         btnAddUserEl.addEventListener('click', toggleFriendShip.bind(

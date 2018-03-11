@@ -1,6 +1,5 @@
 import Router from './router';
 import User from './models/user.model';
-import ProfileController from './controllers/profile.controller';
 
 let App = (function () {
     'use strict';
@@ -23,10 +22,28 @@ let App = (function () {
         isOnline: true
     });
 
-    // currentUser.addFriend(sophie);
-    // currentUser.toggleFriendship(sophie);
-    // localStorage.setItem('currentUser', JSON.stringify(currentUser));
-    ProfileController(currentUser, sophie).render();
+    let defaultPage = Router.find( x => {
+       return x.name === 'default';
+    });
+
+    let initialPage = Router.find( x => {
+        return x.name === defaultPage.route;
+    });
+
+    function locationHashChanged() {
+        let route = Router.find( x => {
+            return x.path === location.hash;
+        });
+        if(typeof route === 'undefined'){
+            location.hash = initialPage.path;
+            initialPage.controller(currentUser, sophie).render();
+        }else{
+            route.controller(currentUser, sophie).render();
+        }
+    }
+
+    window.onhashchange = locationHashChanged;
+    window.onload = locationHashChanged;
 }());
 
 module.exports = App;
