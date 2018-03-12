@@ -13,18 +13,18 @@ let MessageService = function () {
 
     /**
      * Updates the messages saved in memory with
-     * the ones saved in local storage
+     * the ones saved in session storage
      */
-    function getMessagesFromLocalStorage(){
-        messages = JSON.parse(localStorage.getItem('messages')) || [];
+    function getMessagesFromSessionStorage(){
+        messages = JSON.parse(sessionStorage.getItem('messages')) || [];
     }
 
     /**
-     * Updates the messages saved in local storage
+     * Updates the messages saved in session storage
      * with the ones saved in memory
      */
-    function updateLocalStorage(){
-        localStorage.setItem('messages', JSON.stringify(messages));
+    function updateSessionStorage(){
+        sessionStorage.setItem('messages', JSON.stringify(messages));
     }
 
     /**
@@ -33,7 +33,7 @@ let MessageService = function () {
      */
     function addMessages(newMessages) {
         messages.push(...newMessages);
-        updateLocalStorage();
+        updateSessionStorage();
     }
 
     function Singleton() {
@@ -43,7 +43,7 @@ let MessageService = function () {
         instance = this;
         instance.addMessages = addMessages;
         instance.getMessages = getMessages;
-        instance.getMessagesFromLocalStorage = getMessagesFromLocalStorage;
+        instance.getMessagesFromSessionStorage = getMessagesFromSessionStorage;
     }
 
     Singleton.getInstance = function () {

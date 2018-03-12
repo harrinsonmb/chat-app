@@ -11,13 +11,14 @@ let ProfileController = function () {
             btnAddFriend = '.btn--add-as-friend',
             btnFavorite = '.btn--add-as-favorite',
             classBodyIsFriend = 'is-friend',
-            classBodyIsFavorite = 'is-favorite';
+            classBodyIsFavorite = 'is-favorite',
+            classButtonNavbar = '.btn--nav-bar';
 
     /**
      * Checks if the visited user is friend or not
      * and depending on it, the user interface is changed
-     * @param currentUser
-     * @param visitedUser
+     * @param {User} currentUser
+     * @param {User} visitedUser
      */
     function checkFriendship(currentUser, visitedUser){
         let bodyEl = document.querySelector('body');
@@ -37,8 +38,8 @@ let ProfileController = function () {
     /**
      * Checks if the visited user is favorite or not
      * and changes the user interface depending on it
-     * @param currentUser
-     * @param visitedUser
+     * @param {User} currentUser
+     * @param {User} visitedUser
      */
     function checkPreference(currentUser, visitedUser){
         let bodyEl = document.querySelector('body');
@@ -53,9 +54,11 @@ let ProfileController = function () {
      * Checks if the visited user is friend
      * and depending on it, the visited user
      * is added or removed and the user interface
-     * changes too
-     * @param currentUser
-     * @param visitedUser
+     * changes too.
+     * Also update the mocked users and the currentUser
+     * in session storage
+     * @param {User} currentUser
+     * @param {User} visitedUser
      */
     function toggleFriendShip(currentUser, visitedUser){
         if(currentUser.isFriend(visitedUser)){
@@ -65,11 +68,29 @@ let ProfileController = function () {
         }
         checkFriendship(currentUser, visitedUser);
         checkPreference(currentUser, visitedUser);
+        UserService.getInstance().updateCurrentUser(currentUser);
+        UserService.getInstance().saveVisitedUser(visitedUser);
     }
 
+    /**
+     *
+     * @param {User} currentUser
+     * @param {User} visitedUser
+     */
     function toggleFavorite(currentUser, visitedUser){
         currentUser.toggleFavorite(visitedUser);
         checkPreference(currentUser, visitedUser);
+        UserService.getInstance().updateCurrentUser(currentUser);
+        UserService.getInstance().saveVisitedUser(visitedUser);
+    }
+
+    /**
+     * This function should be replaced
+     * the back button should be injected
+     * to the top navbar when profile view renders
+     */
+    function showBackButton(){
+        document.querySelector(classButtonNavbar).classList.remove('hidden');
     }
 
     /**
@@ -78,8 +99,8 @@ let ProfileController = function () {
      * template
      */
     function init(){
-        let currentUser = UserService.getInstance().currentUser;
-        let visitedUser = UserService.getInstance().visitedUser;
+        let currentUser = UserService.getInstance().getCurrentUser();
+        let visitedUser = UserService.getInstance().getVisitedUser();
 
         let mainEl = document.querySelector('main');
         mainEl.innerHTML = '';
@@ -120,6 +141,8 @@ let ProfileController = function () {
         btnAddFavorite.addEventListener('click', toggleFavorite.bind(
             null, currentUser, visitedUser
         ));
+
+        showBackButton();
     }
 
     return {

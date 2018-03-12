@@ -34,10 +34,9 @@ let App = (function () {
     /* Event listeners for the whole application attached */
     document.addEventListener('DOMContentLoaded', function () {
         // When app is loaded first time or refreshed
-        // We update messaged with the ones saved in local storage
-        MessagesService.getInstance().getMessagesFromLocalStorage();
+        // We update messaged with the ones saved in session storage
+        MessagesService.getInstance().getMessagesFromSessionStorage();
 
-        // We go down when page is reloaded (TODO go down only if loaded page is chat view)
         setTimeout(function () { Utils.goBottom(); }, 500);
     });
 

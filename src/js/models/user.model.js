@@ -8,7 +8,7 @@ const User = function (params) {
     this.profileImage = params.profileImage || null;
     this.chatImage = params.chatImage || null;
     this.isOnline = params.isOnline || null;
-    this.friends = [];
+    this.friends = params.friends || [];
 
     /**
      * Checks that the passed user is

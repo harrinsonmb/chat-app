@@ -6,16 +6,17 @@ import MessageController from './message.controller';
 let ChatController = function () {
     'use strict';
     const chatMessagesList = '.chat__messages',
-        chatInput = '.input__field';
+        chatInput = '.input__field',
+        classButtonNavbar = '.btn--nav-bar';
 
     /**
      * Gets the text sent by input
      * and creates a message with the passed user
      * marking it as incoming, finally, message is sent
      * to message controller
-     * @param currentUser
-     * @param incoming
-     * @param event
+     * @param {User} currentUser
+     * @param {boolean} incoming
+     * @param {Event} event
      */
     function renderNewMessage(currentUser, incoming, event){
         if (event.which === 13 || event.keyCode === 13) {
@@ -35,7 +36,7 @@ let ChatController = function () {
 
     /**
      * Deletes the DOM inside chat list
-     * and later call to message controller
+     * and later call to MessageController
      * for rendering all the messages
      */
     function renderAllMessages(){
@@ -56,11 +57,20 @@ let ChatController = function () {
     /**
      * Attach the corresponding
      * listener to the input message
-     * @param currentUser
+     * @param {User} currentUser
      */
     function attachListener(currentUser) {
         let inputEl = document.querySelector(chatInput);
         inputEl.addEventListener('keyup', renderNewMessage.bind(this, currentUser, false) );
+    }
+
+    /**
+     * This function should be replaced
+     * the back button should be injected
+     * to the top navbar when profile view renders
+     */
+    function hideBackButton(){
+        document.querySelector(classButtonNavbar).classList.add('hidden');
     }
 
     /**
@@ -69,10 +79,11 @@ let ChatController = function () {
      * template
      */
     function init(){
-        let currentUser = UserService.getInstance().currentUser;
+        let currentUser = UserService.getInstance().getCurrentUser();
         renderTemplate();
         renderAllMessages();
         attachListener(currentUser);
+        hideBackButton();
     }
 
     return {

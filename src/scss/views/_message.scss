@@ -31,6 +31,14 @@
     .image-wrapper{
       right: 0;
     }
+
+    .user-status{
+      border-radius: 0.75rem;
+      height: 0.75rem;
+      bottom: 0;
+      width: 0.75rem;
+      z-index: z-index(status);
+    }
   }
 
   &__picture{

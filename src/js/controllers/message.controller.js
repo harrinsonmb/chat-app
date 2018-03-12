@@ -8,18 +8,18 @@ import MessageTemplate from '../views/message.html';
 
 let MessageController = function () {
     'use strict';
-    const chatList = '.chat__messages';
-    const chatMessageItem = '.message';
-    const chatMessageLink= '.message__link';
-    const chatMessageText= '.message__text';
-    const chatMessagePicture= '.message__picture';
-    const classIsIncomingMessage = 'is-incoming-message';
+    const chatList = '.chat__messages',
+        chatMessageItem = '.message',
+        chatMessageLink= '.message__link',
+        chatMessageText= '.message__text',
+        chatMessagePicture= '.message__picture',
+        classIsIncomingMessage = 'is-incoming-message';
 
     /**
      * Adds the passed message to the DOM
      * and changes the template if it's
      * and incoming message
-     * @param message
+     * @param {Message} message
      */
     function renderMessage(message){
         let containerEl = document.querySelector(chatList);
@@ -44,7 +44,7 @@ let MessageController = function () {
     /**
      * The passed message is saved to in the service
      * and also is rendered
-     * @param message
+     * @param {Message} message
      */
     function addMessage(message){
         MessageService.getInstance().addMessages([message]);
@@ -57,7 +57,7 @@ let MessageController = function () {
      * template
      */
     function init(){
-        let visitedUser = UserService.getInstance().visitedUser;
+        let visitedUser = UserService.getInstance().getVisitedUser();
 
         let mockedMessage = new Message({
             id: Utils.guid(),
