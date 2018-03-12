@@ -13,6 +13,13 @@ let Utils = {
             return s ? '-' + p.substr(0,4) + '-' + p.substr(4,4) : p ;
         }
         return _p8() + _p8(true) + _p8(true) + _p8();
+    },
+    /**
+     * Function to scroll down in chat view
+     */
+    goBottom: function () {
+        'use strict';
+        window.scrollTo(0,document.body.scrollHeight);
     }
 };
 

@@ -5,6 +5,11 @@ let UserService = function () {
     'use strict';
     let instance;
 
+    /**
+     * Returns a mocked the "visited" user
+     * for using it in several controllers
+     * @returns {User}
+     */
     function getVisitedUser(){
         return new User({
             id: Utils.guid(),
@@ -19,6 +24,11 @@ let UserService = function () {
         });
     }
 
+    /**
+     * Returns a mocked the "visited" user
+     * for using it in several controllers
+     * @returns {User}
+     */
     function getCurrentUser() {
         return new User({
             id: Utils.guid(),

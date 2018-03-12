@@ -15,6 +15,12 @@ let MessageController = function () {
     const chatMessagePicture= '.message__picture';
     const classIsIncomingMessage = 'is-incoming-message';
 
+    /**
+     * Adds the passed message to the DOM
+     * and changes the template if it's
+     * and incoming message
+     * @param message
+     */
     function renderMessage(message){
         let containerEl = document.querySelector(chatList);
         containerEl.insertAdjacentHTML('beforeend', MessageTemplate);
@@ -32,13 +38,24 @@ let MessageController = function () {
 
         let imageEl = lastAdded.querySelector(chatMessagePicture);
         imageEl.src= './img/'+message.user.chatImage;
+        Utils.goBottom();
     }
 
+    /**
+     * The passed message is saved to in the service
+     * and also is rendered
+     * @param message
+     */
     function addMessage(message){
         MessageService.getInstance().addMessages([message]);
         renderMessage(message);
     }
 
+    /**
+     * Function called from main to render
+     * the objects in memory in the corresponding
+     * template
+     */
     function init(){
         let visitedUser = UserService.getInstance().visitedUser;
 

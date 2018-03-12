@@ -13,6 +13,12 @@ let ProfileController = function () {
             classBodyIsFriend = 'is-friend',
             classBodyIsFavorite = 'is-favorite';
 
+    /**
+     * Checks if the visited user is friend or not
+     * and depending on it, the user interface is changed
+     * @param currentUser
+     * @param visitedUser
+     */
     function checkFriendship(currentUser, visitedUser){
         let bodyEl = document.querySelector('body');
         let btnEl = document.querySelector(btnAddFriend);
@@ -28,6 +34,12 @@ let ProfileController = function () {
         btnEl.innerHTML = btnMessage;
     }
 
+    /**
+     * Checks if the visited user is favorite or not
+     * and changes the user interface depending on it
+     * @param currentUser
+     * @param visitedUser
+     */
     function checkPreference(currentUser, visitedUser){
         let bodyEl = document.querySelector('body');
         if(currentUser.isFavorite(visitedUser)){
@@ -37,6 +49,14 @@ let ProfileController = function () {
         }
     }
 
+    /**
+     * Checks if the visited user is friend
+     * and depending on it, the visited user
+     * is added or removed and the user interface
+     * changes too
+     * @param currentUser
+     * @param visitedUser
+     */
     function toggleFriendShip(currentUser, visitedUser){
         if(currentUser.isFriend(visitedUser)){
             currentUser.removeFriend(visitedUser);
@@ -52,6 +72,11 @@ let ProfileController = function () {
         checkPreference(currentUser, visitedUser);
     }
 
+    /**
+     * Function called from main to render
+     * the objects in memory in the corresponding
+     * template
+     */
     function init(){
         let currentUser = UserService.getInstance().currentUser;
         let visitedUser = UserService.getInstance().visitedUser;
