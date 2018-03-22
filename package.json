@@ -19,20 +19,20 @@
   "author": "Harrinson Mosquera Bastidas",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.1",
-    "babel-preset-es2015": "^6.24.1",
-    "browser-sync": "^2.23.6",
-    "copy-webpack-plugin": "^4.5.1",
-    "gulp": "^3.9.1",
-    "gulp-jshint": "^2.1.0",
-    "gulp-webpack": "^1.5.0",
-    "jshint": "^2.9.5",
-    "node-sass": "^4.7.2",
-    "webpack": "^4.1.1"
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.1",
+    "babel-preset-es2015": "6.24.1",
+    "browser-sync": "2.23.6",
+    "copy-webpack-plugin": "4.5.1",
+    "gulp": "3.9.1",
+    "gulp-jshint": "2.1.0",
+    "gulp-webpack": "1.5.0",
+    "jshint": "2.9.5",
+    "node-sass": "4.7.2",
+    "webpack": "4.1.1"
+    "babel-polyfill": "6.26.0",
+    "gulp-sass": "3.1.0"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
-    "gulp-sass": "^3.1.0"
   }
 }
